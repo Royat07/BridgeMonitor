@@ -91,7 +91,7 @@ if os.path.exists("crack_detector_model.keras"):
 else:
     model = build_unet(input_shape)
     model.compile(optimizer=optimizers.Adam(learning_rate=0.0001), loss='binary_crossentropy', metrics=['accuracy'])
-    history = model.fit(X_train, y_train, batch_size=16, epochs=20, validation_data=(X_val, y_val))
+    history = model.fit(X_train, y_train, batch_size=16, epochs=10, validation_data=(X_val, y_val))
     model.save("crack_detector_model.keras")
 model.summary()
 
