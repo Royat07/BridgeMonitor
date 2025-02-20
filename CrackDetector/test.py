@@ -69,3 +69,5 @@ for index, image in enumerate(images):
     filtered_contour = [contour for contour in image_contour if cv2.arcLength(contour, True) > 100]
     filtered_contour_drew = cv2.drawContours(image_resized.copy(), filtered_contour, -1, (0, 0, 255), 1)
     show_img("Filtered contour image " + image_name[index], filtered_contour_drew)
+    show_res("Result with Canny, " + image_name[index], image_edged)
+    show_res("Result by finding contours, " + image_name[index], filtered_contour_drew)
